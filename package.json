@@ -1,0 +1,16 @@
+{
+  "name": "react-profiler-tool",
+  "version": "1.0.0",
+  "description": "React profiler tool playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "profiler",
+    "tool"
+  ],
+  "author": "alexhoma <alexcm.14@gmail.com>",
+  "license": "ISC"
+}
