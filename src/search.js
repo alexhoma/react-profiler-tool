@@ -6,5 +6,7 @@ const haystack = [
 ];
 
 export function search(needle) {
-  return haystack.filter(value => value.match(needle));
+  return haystack.filter(
+    value => value.toLowerCase().match(needle.toLowerCase()) && value
+  );
 }
