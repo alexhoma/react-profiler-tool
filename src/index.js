@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import { search } from "./search";
 
 function SearchBox({ onChange }) {
   return (
@@ -11,15 +12,15 @@ function SearchBox({ onChange }) {
   );
 }
 
-function Result({ hits }) {
-  if (!hits) {
-    return null;
-  }
+function Item({ item }) {
+  return <li>{item}</li>;
+}
 
+function Result({ hits }) {
   return (
     <ul>
-      {hits.map(hit => (
-        <li key={`${hit}-hit`}>{hit}</li>
+      {hits.map((item, key) => (
+        <Item key={`${key}-hit`} item={item} />
       ))}
     </ul>
   );
@@ -27,16 +28,12 @@ function Result({ hits }) {
 
 class MiniTrovit extends React.Component {
   state = {
-    hits: [
-      "Piso en Les Corts",
-      "Piso Barcelona centro",
-      "Piso en Rambla de Poblenou",
-      "Casa con piscina"
-    ]
+    hits: []
   };
 
   onUserSearch = e => {
-    console.log("searching");
+    const hits = search(e.target.value);
+    this.setState({ hits });
   };
 
   render() {
