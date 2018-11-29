@@ -2,7 +2,13 @@ import React from "react";
 import { render } from "react-dom";
 
 function SearchBox({ onChange }) {
-  return <input type="text" onChange={e => onChange(e)} />;
+  return (
+    <input
+      type="text"
+      placeholder="Search something..."
+      onChange={e => onChange(e)}
+    />
+  );
 }
 
 function Result({ hits }) {
@@ -13,7 +19,7 @@ function Result({ hits }) {
   return (
     <ul>
       {hits.map(hit => (
-        <li>{hit}</li>
+        <li key={`${hit}-hit`}>{hit}</li>
       ))}
     </ul>
   );
@@ -21,7 +27,12 @@ function Result({ hits }) {
 
 class MiniTrovit extends React.Component {
   state = {
-    hits: []
+    hits: [
+      "Piso en Les Corts",
+      "Piso Barcelona centro",
+      "Piso en Rambla de Poblenou",
+      "Casa con piscina"
+    ]
   };
 
   onUserSearch = e => {
@@ -31,7 +42,7 @@ class MiniTrovit extends React.Component {
   render() {
     return (
       <section>
-        <h1>MiniTrovit</h1>
+        <h1>🏠 MiniTrovit</h1>
         <SearchBox onChange={this.onUserSearch} />
         <Result hits={this.state.hits} />
       </section>
