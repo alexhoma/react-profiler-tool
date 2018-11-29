@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 
-const SearchBox = onChange => {
-  return <input type="text" onChange={onChange} />;
-};
+function SearchBox({ onChange }) {
+  return <input type="text" onChange={e => onChange(e)} />;
+}
 
-const Result = hits => {
+function Result({ hits }) {
   if (!hits) {
     return null;
   }
@@ -17,15 +17,12 @@ const Result = hits => {
       ))}
     </ul>
   );
-};
+}
 
 class MiniTrovit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hits: null
-    };
-  }
+  state = {
+    hits: []
+  };
 
   onUserSearch = e => {
     console.log("searching");
