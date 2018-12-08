@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { search, highlight } from "./lib";
 
-function SearchBox({ onChange, type }) {
+const SearchBox = React.memo(function SearchBox({ onChange, type }) {
   return (
     <input
       type="search"
@@ -10,9 +10,12 @@ function SearchBox({ onChange, type }) {
       onChange={e => onChange(e)}
     />
   );
-}
+});
 
-function HighlightedTitle({ query, title }) {
+const HighlightedTitle = React.memo(function HighlightedTitle({
+  query,
+  title
+}) {
   const highlighted = highlight(query, title);
   return (
     <span
@@ -21,17 +24,17 @@ function HighlightedTitle({ query, title }) {
       }}
     />
   );
-}
+});
 
-function Price({ price }) {
+const Price = React.memo(function Price({ price }) {
   return <span>{price}</span>;
-}
+});
 
-function Item({ children }) {
+const Item = React.memo(function Item({ children }) {
   return <li>{children}</li>;
-}
+});
 
-function Result({ query, hits }) {
+const Result = React.memo(function Result({ query, hits }) {
   return (
     <ul>
       {hits.map((item, key) => (
@@ -42,9 +45,9 @@ function Result({ query, hits }) {
       ))}
     </ul>
   );
-}
+});
 
-class MiniTrovit extends React.Component {
+class MiniTrovit extends React.PureComponent {
   state = {
     query: "",
     hits: []
