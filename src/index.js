@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { search, highlight } from "./lib";
 
-const SearchBox = React.memo(function SearchBox({ onChange, type }) {
+const SearchBox = React.memo(function SearchBox({ onChange }) {
   return (
     <input
       type="search"
