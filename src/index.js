@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { search, highlight } from "./lib";
 
-function SearchBox({ onChange, type }) {
+function SearchBox({ onChange }) {
   return (
     <input
       type="search"
