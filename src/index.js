@@ -5,7 +5,7 @@ import store, { fetchAdsAction } from "./store";
 import { highlight } from "./lib";
 
 const SearchBox = (function SearchBox() {
-  function component({ onChange }) {
+  function SearchBox({ onChange }) {
     return (
       <input
         type="search"
@@ -24,11 +24,11 @@ const SearchBox = (function SearchBox() {
   return connect(
     null,
     mapDispatchToProps
-  )(component);
+  )(SearchBox);
 })();
 
 const HighlightedTitle = (function HighlightedTitle() {
-  function component({ query, title }) {
+  function HighlightedTitle({ query, title }) {
     const highlighted = highlight(query, title);
     return (
       <span
@@ -48,7 +48,7 @@ const HighlightedTitle = (function HighlightedTitle() {
   return connect(
     mapStateToProps,
     null
-  )(component);
+  )(HighlightedTitle);
 })();
 
 function Price({ price }) {
@@ -60,7 +60,7 @@ function Item({ children }) {
 }
 
 const Result = (function Result() {
-  function component({ hits }) {
+  function Result({ hits }) {
     return (
       <ul>
         {hits.map((item, key) => (
@@ -82,7 +82,7 @@ const Result = (function Result() {
   return connect(
     mapStateToProps,
     null
-  )(component);
+  )(Result);
 })();
 
 function MiniTrovit() {
