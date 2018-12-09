@@ -86,4 +86,8 @@ Each row represents an interaction that was traced. The colored dots along the r
 
 ## Resources
 
-- Reactjs.org: https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html
+- Introducing the React Profiler (Reactjs.org): https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html
+- Profiling components with Devtools profiler (Reactjs.org): https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-devtools-profiler
+- React Devtools Profiler (Elijah Manor): https://elijahmanor.com/react-devtools-profiler/
+- Interaction Tracing with react (Bvaugn Gist): https://gist.github.com/bvaughn/8de925562903afd2e7a12554adcdda16
+- Use the New Profiler in React Developer Tools to Generate Flame Charts and Interactions (egghead.io):https://egghead.io/lessons/react-use-the-new-profiler-in-react-developer-tools-to-generate-flame-charts-and-interactions
