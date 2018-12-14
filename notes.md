@@ -1,4 +1,4 @@
-# React Profiler Tool notes:
+# Research notes
 
 <!-- TOC -->
 
