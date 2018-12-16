@@ -24,7 +24,7 @@ function HighlightedTitle({ query, title }) {
 }
 
 function Price({ price }) {
-  return <span>{price}</span>;
+  return <span>{price}$</span>;
 }
 
 function Item({ children }) {
