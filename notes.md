@@ -18,11 +18,11 @@
 
 Open "Chrome dev tools" > React > Profiler
 
-![Access](https://reactjs.org/static/devtools-profiler-tab-4da6b55fc3c98de04c261cd902c14dc3-53c76.png)
+![Access](./images/start_profiler.png)
 
 Press the record button to startprofiling any interaction. Once you're done, just stop recording.
 
-![Stop profiling](https://reactjs.org/static/stop-profiling-45619de03bed468869f7a0878f220586-53c76.png)
+![Stop profiling](./images/stop_profiler.png)
 
 ## Reading data
 
@@ -34,6 +34,8 @@ Conceptually, React works in two phases:
 ### Commits bar:
 
 Devtools groups the recorded performance info by commit in a bar near the top right of the profiler.
+
+![commits bar](./images/commits_bar.png)
 
 - Each bar represents a single react commit.
 - The color and height of each bar represents how long the commit took to render.
@@ -61,13 +63,13 @@ The flamechart view represents the state of the application for a particular Rea
 
 TODO: not clear enough, at least for me.
 
-![Flame chart example](https://reactjs.org/static/flame-chart-3046f500b9bfc052bde8b7b3b3cfc243-53c76.pngg)
+![Flame chart example](./images/flame_chart.png)
 
 ### Ranked chart:
 
 Represents a single commit. Each bar shown in the chart is a React component (SearchBox, Results, Hit, etc.). The component is ordered from the longest to render (top) to the shortest (bottom).
 
-![Ranked chart example](https://reactjs.org/static/ranked-chart-0c81347535e28c9cdef0e94fab887b89-53c76.png)
+![Ranked chart example](./images/ranked_chart.png)
 
 ### Component chart:
 
@@ -75,14 +77,14 @@ Useful to see how many times a single component was rendered. Each bar represent
 
 The color and height of each bar corresponds to how long the component took to render relative to other components in a particular commit.
 
-![Component chart example](https://reactjs.org/static/component-chart-d71275b42c6109e222fbb0932a0c8c09-53c76.png)
+![Component chart example](./images/component_chart.png)
 
 ### Interactions:
 
 React recently added another experimental API to track the cause of an update.
 Each row represents an interaction that was traced. The colored dots along the row represent commits that were related to that interaction.
 
-![Interactions example](https://reactjs.org/static/interactions-a91a39ac076b71aa7a202aaf46f8bd5a-53c76.png)
+![Interactions example](./images/interactions_chart.png)
 
 ## Resources
 
