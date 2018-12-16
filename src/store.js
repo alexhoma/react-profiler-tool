@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import isEqual from 'lodash/isEqual'
 import { search } from "./lib";
 
 /**
@@ -10,7 +11,13 @@ const FETCH_ADS = "FETCH_ADS";
  * Action creator
  */
 export function fetchAdsAction(query) {
-  return { type: FETCH_ADS, query };
+  return { 
+    type: FETCH_ADS, 
+    payload: {
+      query,
+      hits: search(query) // not async, it's just for testing purposes
+    }
+  };
 }
 
 /**
@@ -21,12 +28,23 @@ function fetchAdsReducer(
     query: "",
     hits: []
   },
-  action
+  {
+    type,
+    payload
+  }
 ) {
-  if (action.type === FETCH_ADS) {
+  if (type === FETCH_ADS) {
+    if (isEqual(payload.hits, state.hits)) {
+      return {
+        ...state,
+        query: payload.query
+      }
+    }
+
     return {
-      query: action.query,
-      hits: search(action.query) // not async, it's just for testing purposes
+      ...state,
+      query: payload.query,
+      hits: payload.hits
     };
   }
 
