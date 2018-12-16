@@ -37,7 +37,7 @@ const Item = React.memo(function Item({ children }) {
 const Result = React.memo(function Result({ query, hits }) {
   return (
     <ul>
-      {hits.map((item, key) => (
+      {hits.map((item) => (
         <Item key={item.id}>
           <HighlightedTitle query={query} title={item.title} />
           <Price price={item.price} />

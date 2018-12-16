@@ -1,4 +1,4 @@
-import haystack from "./data.json";
+import { smallDataset as haystack } from "./data.js";
 
 export function search(needle) {
   if (needle === "") {
