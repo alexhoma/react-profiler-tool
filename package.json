@@ -20,14 +20,16 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "schedule": "^0.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "faker": "^4.1.0",
     "parcel-bundler": "^1.10.3",
-    "faker": "^4.1.0"
+    "scheduler": "^0.11.3"
   }
 }

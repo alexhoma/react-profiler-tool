@@ -3,6 +3,7 @@ import { Provider, connect } from "react-redux";
 import { render } from "react-dom";
 import store, { fetchAdsAction } from "./store";
 import { highlight } from "./lib";
+import trackActions from './profiling'
 
 const SearchBox = (function SearchBox() {
   function SearchBox({ onChange }) {
@@ -16,9 +17,9 @@ const SearchBox = (function SearchBox() {
   }
 
   function mapDispatchToProps(dispatch) {
-    return {
+    return trackActions({
       onChange: query => dispatch(fetchAdsAction(query))
-    };
+    });
   }
 
   return connect(
