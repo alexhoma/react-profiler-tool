@@ -35,3 +35,7 @@ and prevent re-render components if any prop have changed.
 ```
 git checkout with-react-redux && npm i
 ```
+
+## Demo example
+
+![Interactions example](./images/application.png)
