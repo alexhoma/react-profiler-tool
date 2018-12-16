@@ -52,7 +52,7 @@ const HighlightedTitle = (function HighlightedTitle() {
 })();
 
 function Price({ price }) {
-  return <span>{price}</span>;
+  return <span>{price}$</span>;
 }
 
 function Item({ children }) {
